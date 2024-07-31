@@ -5,6 +5,8 @@
  */
 package week01;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 import javax.swing.text.html.HTML;
@@ -19,6 +21,8 @@ public class Week01 {
     /**
      * @param args the command line arguments
      */
+    public static Exc02 exc = new Exc02();
+    
     public static void main(String[] args) {
        //Excercise 01
         //WeekDay();
@@ -29,8 +33,15 @@ public class Week01 {
         //exc.CheckVC();
 
         //TaxApp
-        Week01 forTax = new Week01();
-        forTax.ManageTax();
+        /*Week01 forTax = new Week01();
+        forTax.ManageTax();*/
+        
+        //Day03
+        //exc.StringsExc();
+        //exc.ArraysExc();
+        
+        //AnonymousArrarys
+        AnonymousArrs();
     }
 
     public static void WeekDay() {
@@ -52,15 +63,23 @@ public class Week01 {
         }
     }
 
-    public void ManageTax() {
+    public void ManageTax() 
+    {
         String monthlySalary = JOptionPane.showInputDialog(null, "Hello User, Please Enter Your Monthly Salary:", "Input", JOptionPane.QUESTION_MESSAGE);
         TaxApp app = new TaxApp();
         app.setAnnualSalary(Double.parseDouble(monthlySalary));
-
-        String nl = System.lineSeparator();
-        String monthlyMessage = nl + "MONTHLY" + nl + "Full Monthly Salary: R" + app.monthlySalary + nl + "Monthly Tax: R" + app.monthlyTax + nl + "Monthly Salary After Tax: R" + app.monthlySalaryAfterTax;
-        String annualMessage = nl + nl + "ANNUAL" + nl + "Full Annual Salary: R" + app.annualSalary + nl + "Annual Tax: R" + app.annualTax + nl + "Annual Salary After Tax: R" + app.annualSalaryAfterTax;
-
-        JOptionPane.showMessageDialog(null, monthlyMessage + annualMessage, "Output", JOptionPane.INFORMATION_MESSAGE);
+        app.DisplayTaxes();
+    }
+    public static void AnonymousArrs()
+    {
+        //Anonymous Arrays
+        String[] stringsArr = new String[5];
+        Double[] doubleArr = new Double[5];
+        //Innitialisation
+        stringsArr = exc.SetStrings();
+        doubleArr = exc.SetDoubles();
+        //Print
+        System.out.println("Random Strings: "+ Arrays.toString(stringsArr));
+        System.out.println("Random Doubles: " + Arrays.toString(doubleArr));
     }
 }
