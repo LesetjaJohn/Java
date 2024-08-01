@@ -102,4 +102,22 @@ public class Exc02 {
     {
         return new Double[]{10.1, 11.2, 12.3, 13.4,14.5};
     }
+    //Method Overloading
+    public static int getHighestNum(int... nums)
+    {
+        int highest = 0;
+        for(int num:nums)
+        {
+            if(num >= highest)
+            {
+                highest = num;
+            }
+        }
+       return highest;
+    }
+    public static double getHighestNum(double num01,int num02)
+    {
+        return Math.max(num01, num02);
+    }
+
 }

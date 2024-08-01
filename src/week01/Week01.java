@@ -11,7 +11,6 @@ import java.util.Scanner;
 import javax.swing.JOptionPane;
 import javax.swing.text.html.HTML;
 import jdk.nashorn.internal.codegen.types.Type;
-
 /**
  *
  * @author Dell-User
@@ -41,7 +40,10 @@ public class Week01 {
         //exc.ArraysExc();
         
         //AnonymousArrarys
-        AnonymousArrs();
+        //AnonymousArrs();
+        
+        //Day04
+        manageHighest();
     }
 
     public static void WeekDay() {
@@ -81,5 +83,14 @@ public class Week01 {
         //Print
         System.out.println("Random Strings: "+ Arrays.toString(stringsArr));
         System.out.println("Random Doubles: " + Arrays.toString(doubleArr));
+    }
+    
+    public static void manageHighest()
+    {
+        int[] nums = {81,34,45};
+        //int sample01 = 100, sample02 = 50;
+        
+        System.out.println("Highest number From Overloaded Method01 is: " + exc.getHighestNum(nums));
+        System.out.println("Highest number From Overloaded Method02 is: " + exc.getHighestNum(20.4,10));
     }
 }
